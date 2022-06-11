@@ -43,7 +43,7 @@ class UserFacadeTest {
 
         try {
             em.getTransaction().begin();
-            em.createNamedQuery("Users.deleteAllRows").executeUpdate();
+            //em.createNamedQuery("Users.deleteAllRows").executeUpdate();
             em.persist(user1);
             em.persist(user2);
             em.getTransaction().commit();
