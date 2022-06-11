@@ -34,8 +34,8 @@ class UserFacadeTest {
     @BeforeEach
     public void setUp() {
         EntityManager em = emf.createEntityManager();
-        user1 = new User("Lisa", "kodeord");
-        user2 = new User("Bob", "ordkode");
+        user1 = new User("Hanne", "kode1");
+        user2 = new User("Per", "hemmeligt");
         role1 = new Role("user");
         role2 = new Role("admin");
         user1.addRole(role1);
@@ -43,7 +43,7 @@ class UserFacadeTest {
 
         try {
             em.getTransaction().begin();
-            //em.createNamedQuery("Users.deleteAllRows").executeUpdate();
+            em.createNamedQuery("Users.deleteAllRows").executeUpdate();
             em.persist(user1);
             em.persist(user2);
             em.getTransaction().commit();
