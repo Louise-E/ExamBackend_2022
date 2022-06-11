@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Path("signup")
-public class SignUpEndpoint {
+@Path("create")
+public class CreateEndpoint {
     public static final int TOKEN_EXPIRE_TIME = 1000 * 60 * 30; //30 min
     private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory();
     public static final UserFacade USER_FACADE = UserFacade.getUserFacade(EMF);
@@ -37,7 +37,7 @@ public class SignUpEndpoint {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response signUp(String jsonString) throws API_Exception {
+    public Response create(String jsonString) throws API_Exception {
         String username;
         String password;
         try {
@@ -49,7 +49,7 @@ public class SignUpEndpoint {
         }
 
         try {
-            User user = USER_FACADE.signUp(username, password);
+            User user = USER_FACADE.create(username, password);
             String token = createToken(username, user.getRolesAsStrings());
             JsonObject responseJson = new JsonObject();
             responseJson.addProperty("username", username);

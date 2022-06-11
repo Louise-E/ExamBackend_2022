@@ -35,7 +35,7 @@ public class UserFacade {
         return user;
     }
 
-    public User signUp(String userName, String password) {
+    public User create(String userName, String password) {
         EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
