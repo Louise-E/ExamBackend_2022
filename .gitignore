@@ -221,7 +221,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#File
-*.SetUpTestUsers.class
-
 # End of https://www.toptal.com/developers/gitignore/api/java,osx,windows,intellij,netbeans,maven

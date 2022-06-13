@@ -10,3 +10,7 @@ x-auth-token:
 ###
 
 GET http://localhost:8080/devops_starter_war_exploded/api/show/all
+
+###
+
+DELETE http://localhost:8080/devops_starter_war_exploded/api/show/1
