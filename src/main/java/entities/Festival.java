@@ -47,6 +47,14 @@ public class Festival implements Serializable {
         this.duration = duration;
     }
 
+    public Festival(String festivalName, String city, String startDate, String duration, List<Guest> guests) {
+        this.festivalName = festivalName;
+        this.city = city;
+        this.startDate = startDate;
+        this.duration = duration;
+        this.guests = guests;
+    }
+
     public Integer getFestivalId() {
         return festivalId;
     }

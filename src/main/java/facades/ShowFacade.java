@@ -1,8 +1,10 @@
 package facades;
 
 import dtos.ShowDTO;
+import entities.Festival;
 import entities.Guest;
 import entities.Shows;
+import errorhandling.NotFoundException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,8 +27,18 @@ public class ShowFacade {
         return instance;
     }
 
-    /*public Show createShow(){
+    private EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
 
+   /* public ShowDTO createShow(ShowDTO showDTO){
+        EntityManager em = emf.createEntityManager();
+        try {
+            Guest guest = em.find(Guest.class, showDTO.getGuestList());
+            if (guest == null){
+                throw new NotFoundException(showDTO.getShowName(), showDTO.getDuration(), showDTO.getLocation(), showDTO.getStartDate(), showDTO.getStartTime())
+            }
+        }
     }*/
 
     public List<ShowDTO> getAllShows(){

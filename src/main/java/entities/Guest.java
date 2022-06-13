@@ -25,10 +25,10 @@ public class Guest implements Serializable {
     @Column(name = "status", nullable = false)
     private String status;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Festival festival = new Festival();
 
-    @ManyToMany(mappedBy = "guestList")
+    @ManyToMany(mappedBy = "guestList", cascade = CascadeType.PERSIST)
     private List<Shows> showsList = new ArrayList<>();
 
     public Guest() {
@@ -50,6 +50,30 @@ public class Guest implements Serializable {
         this.email = email;
         this.status = status;
         this.festival = festival;
+    }
+
+    public Guest(String guestName, String phone, String email, String status, Festival festival, List<Shows> showsList) {
+        this.guestName = guestName;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.festival = festival;
+        this.showsList = showsList;
+    }
+
+    public Guest(String guestName, String phone, String email, String status, List<Shows> showsList) {
+        this.guestName = guestName;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.showsList = showsList;
+    }
+
+    public Guest(String guestName, String phone, String email, String status) {
+        this.guestName = guestName;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
     }
 
     public Integer getGuestId() {

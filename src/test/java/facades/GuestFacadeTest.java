@@ -14,18 +14,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ShowsFacadeTest {
+class GuestFacadeTest {
     private static EntityManagerFactory emf;
-    private static ShowFacade showFacade;
+    private static GuestFacade guestFacade;
 
-    private Shows shows1, shows2;
     private Guest guest1, guest2;
+    private Shows shows1, shows2;
     private Festival festival;
 
     @BeforeAll
     public static void SetUpClass(){
         emf = EMF_Creator.createEntityManagerFactoryForTest();
-        showFacade = ShowFacade.getShowFacade(emf);
+        guestFacade = GuestFacade.getGuestFacade(emf);
     }
 
     @AfterAll
@@ -34,20 +34,18 @@ class ShowsFacadeTest {
     }
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         EntityManager em = emf.createEntityManager();
         festival = new Festival("Sundance", "Salt Lake City", "14-06-2022", "10 days");
-        List<Guest> guests = new ArrayList<>();
-        guest1 = new Guest("Bente", "23543276", "bente@email.dk", "Assigned",festival);
-        guest2 = new Guest("Poul", "54769832", "poul@email.dk", "Cancelled",festival);
-        guests.add(guest1);
-        guests.add(guest2);
-        shows1 = new Shows("Marvel", "3 hours", "Theater 2", "14-06-2022", "20:00", guests);
-        shows2 = new Shows("Horror Night", "4 hours", "Theater 1", "14-06-2022", "23:30", guests);
+        List<Shows> showsList = new ArrayList<>();
+        shows1 = new Shows("Marvel", "3 hours", "Theater 2", "14-06-2022", "20:00");
+        shows2 = new Shows("Horror Night", "4 hours", "Theater 1", "14-06-2022", "23:30");
+        showsList.add(shows1);
+        showsList.add(shows2);
+        guest1 = new Guest("Bente", "23543276", "bente@email.dk", "Assigned",festival, showsList);
+        guest2 = new Guest("Poul", "54769832", "poul@email.dk", "Cancelled",festival, showsList);
         try {
             em.getTransaction().begin();
-            em.createNamedQuery("Shows.deleteAllRows").executeUpdate();
-            em.createNamedQuery("Festival.deleteAllRows").executeUpdate();
             em.createNamedQuery("Guest.deleteAllRows").executeUpdate();
             em.persist(festival);
             em.persist(guest1);
@@ -66,25 +64,25 @@ class ShowsFacadeTest {
     }
 
     @Test
-    public void getShowFacade() {
+    public void getGuestFacade() {
     }
 
-    //virker
     @Test
-    public void getAllShowsTest() {
-        int expected = 2;
-        int actual = showFacade.getAllShows().size();
+    public void getAllShowsFromGuest() {
+        /*List<ShowDTO> showsList = guestFacade.getAllShowsFromGuest(guest1.getGuestName());
 
-        assertEquals(expected, actual);
+        ShowDTO showDTO1 = new ShowDTO(shows1);
+        ShowDTO showDTO2 = new ShowDTO(shows2);
+
+        int expected = 2;
+        int actual = showsList.size();
+        List<Shows> showsList = new ArrayList<>();
+
+        String expected = showsList.toString();
+        String actual = guestFacade.getAllShowsFromGuest();
+
+        assertEquals(expected, actual);*/
+
 
     }
-
-    /*@Test
-    public void getAllShowsFromGuest(){
-        int expected = 2;
-        int actual = showFacade.getAllShows().get(0).;
-
-        //assertEquals(expected, actual);
-
-    }*/
 }

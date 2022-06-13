@@ -27,7 +27,7 @@ public class Shows implements Serializable {
     @Column(name = "start_time", nullable = false)
     private String startTime;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private List<Guest> guestList = new ArrayList<>();
 
     public Shows() {
@@ -50,6 +50,14 @@ public class Shows implements Serializable {
         this.startDate = startDate;
         this.startTime = startTime;
         this.guestList = guestList;
+    }
+
+    public Shows(String showName, String duration, String location, String startDate, String startTime) {
+        this.showName = showName;
+        this.duration = duration;
+        this.location = location;
+        this.startDate = startDate;
+        this.startTime = startTime;
     }
 
     public Integer getShowId() {
