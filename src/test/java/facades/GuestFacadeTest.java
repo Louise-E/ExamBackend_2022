@@ -67,7 +67,7 @@ class GuestFacadeTest {
     public void getGuestFacade() {
     }
 
-    @Test
+    *//*@Test
     public void getAllShowsFromGuest() {
         List<ShowDTO> showsList = guestFacade.getAllShowsFromGuest(guest1.getGuestName());
 

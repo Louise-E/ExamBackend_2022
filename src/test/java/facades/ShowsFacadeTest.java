@@ -89,7 +89,7 @@ class ShowsFacadeTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    *//*@Test
     public void getAllShowsFromGuest(){
         int expected = 2;
         int actual = showFacade.getAllShows().get(0).;

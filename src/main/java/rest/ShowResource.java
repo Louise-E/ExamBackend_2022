@@ -36,6 +36,7 @@ public class ShowResource {
     @DELETE
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
+    //@RolesAllowed("admin")
     public Response deleteShowById(@PathParam("id")Integer id){
         FACADE.deleteShowById(id);
 
