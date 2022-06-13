@@ -25,7 +25,7 @@ import utils.EMF_Creator;
 //Disabled
 public class LoginEndpointTest {
 
-    private static final int SERVER_PORT = 7777;
+    /*private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost/api";
 
     static final URI BASE_URI = UriBuilder.fromUri(SERVER_URL).port(SERVER_PORT).build();
@@ -220,5 +220,5 @@ public class LoginEndpointTest {
                 .statusCode(403)
                 .body("code", equalTo(403))
                 .body("message", equalTo("Not authenticated - do login"));
-    }
+    }*/
 }
