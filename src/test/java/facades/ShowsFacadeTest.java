@@ -18,9 +18,9 @@ class ShowsFacadeTest {
     private static EntityManagerFactory emf;
     private static ShowFacade showFacade;
 
-    Shows shows1, shows2;
-    Guest guest1, guest2;
-    Festival festival;
+    private Shows shows1, shows2;
+    private Guest guest1, guest2;
+    private Festival festival;
 
     @BeforeAll
     public static void SetUpClass(){
@@ -72,20 +72,6 @@ class ShowsFacadeTest {
     //virker
     @Test
     public void getAllShows() {
-        /*ShowDTO showDTO1 = new ShowDTO(shows1);
-        ShowDTO showDTO2 = new ShowDTO(shows2);
-        List<Guest> guests = shows1.getGuestList();
-        showDTO1.setGuestList(guests);
-        showDTO2.setGuestList(guests);
-
-        List<ShowDTO> showDTOS = new ArrayList<>();
-        showDTOS.add(showDTO1);
-        showDTOS.add(showDTO2);
-
-        String expected = shows1.getShowName();
-        String actual = showFacade.getAllShows().size();
-
-        */
         int expected = 2;
         int actual = showFacade.getAllShows().size();
 

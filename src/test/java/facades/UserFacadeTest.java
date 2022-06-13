@@ -4,16 +4,15 @@ import entities.Role;
 import entities.User;
 import org.junit.jupiter.api.*;
 import utils.EMF_Creator;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 class UserFacadeTest {
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static UserFacade userFacade;
 
-    User user1, user2;
-    Role role1, role2;
+    private User user1, user2;
+    private Role role1, role2;
 
     public UserFacadeTest(){
 
@@ -52,5 +51,5 @@ class UserFacadeTest {
 
     @AfterEach
     public void tearDown() {
-    }
+    }*/
 }
