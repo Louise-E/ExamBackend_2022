@@ -56,14 +56,15 @@ class UserFacadeTest {
     public void tearDown() {
     }
 
+    @Disabled
     @Test
     public void getUserFacade() {
     }
-
+    @Disabled
     @Test
     public void getVeryfiedUser() {
     }
-
+    @Disabled
     @Test
     public void createTest() {
 

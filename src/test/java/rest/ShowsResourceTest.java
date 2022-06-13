@@ -23,7 +23,6 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
-
 class ShowsResourceTest {
     private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost/api";
@@ -94,6 +93,7 @@ class ShowsResourceTest {
     }
 
     //virker ikke
+
     @Disabled
     @Test
     public void getAllShows() {

@@ -73,7 +73,7 @@ class ShowsFacadeTest {
     //virker
     @Test
     public void getAllShows() {
-        ShowDTO showDTO1 = new ShowDTO(shows1);
+        /*ShowDTO showDTO1 = new ShowDTO(shows1);
         ShowDTO showDTO2 = new ShowDTO(shows2);
         List<Guest> guests = shows1.getGuestList();
         showDTO1.setGuestList(guests);
@@ -84,7 +84,12 @@ class ShowsFacadeTest {
         showDTOS.add(showDTO2);
 
         String expected = shows1.getShowName();
-        String actual = showFacade.getAllShows().get(1).getShowName();
+        String actual = showFacade.getAllShows().size();
+
+        */
+
+        int expected = 2;
+        int actual = showFacade.getAllShows().size();
 
         assertEquals(expected, actual);
 
