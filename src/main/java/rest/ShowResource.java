@@ -8,9 +8,7 @@ import utils.EMF_Creator;
 
 import javax.annotation.security.RolesAllowed;
 import javax.persistence.EntityManagerFactory;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import java.util.List;
 
@@ -34,4 +32,14 @@ public class ShowResource {
         List<ShowDTO> showDTOList = FACADE.getAllShows();
         return Response.ok().entity(GSON.toJson(showDTOList)).build();
     }
+
+    @DELETE
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response deleteShowById(@PathParam("id")Integer id){
+        FACADE.deleteShowById(id);
+
+        return Response.ok().build();
+    }
+
 }
