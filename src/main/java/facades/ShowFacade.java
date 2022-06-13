@@ -52,6 +52,20 @@ public class ShowFacade {
         }
     }
 
+    public String deleteShowById(Integer id){
+        EntityManager em = emf.createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+            Shows shows = em.find(Shows.class, id);
+            em.remove(shows);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return "Show has been deleted with id: " + id;
+    }
+
     /*public List<ShowDTO> getAllShowsFromGuest(String showlist){
         EntityManager em = emf.createEntityManager();
         try {

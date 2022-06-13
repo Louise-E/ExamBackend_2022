@@ -79,7 +79,17 @@ class ShowsFacadeTest {
 
     }
 
-    /@Test
+    //virker
+    @Test
+    public void deleteShowByIdTest(){
+        Integer id = shows1.getShowId();
+        String expected = "Show has been deleted with id: " + id;
+        String actual = showFacade.deleteShowById(id);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void getAllShowsFromGuest(){
         int expected = 2;
         int actual = showFacade.getAllShows().get(0).;
