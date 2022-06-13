@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShowsFacadeTest {
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static ShowFacade showFacade;
 
     private Shows shows1, shows2;
@@ -79,7 +79,7 @@ class ShowsFacadeTest {
 
     }
 
-    /*@Test
+    /@Test
     public void getAllShowsFromGuest(){
         int expected = 2;
         int actual = showFacade.getAllShows().get(0).;

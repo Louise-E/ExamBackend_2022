@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GuestFacadeTest {
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static GuestFacade guestFacade;
 
     private Guest guest1, guest2;
@@ -69,7 +69,7 @@ class GuestFacadeTest {
 
     @Test
     public void getAllShowsFromGuest() {
-        /*List<ShowDTO> showsList = guestFacade.getAllShowsFromGuest(guest1.getGuestName());
+        List<ShowDTO> showsList = guestFacade.getAllShowsFromGuest(guest1.getGuestName());
 
         ShowDTO showDTO1 = new ShowDTO(shows1);
         ShowDTO showDTO2 = new ShowDTO(shows2);
@@ -81,8 +81,8 @@ class GuestFacadeTest {
         String expected = showsList.toString();
         String actual = guestFacade.getAllShowsFromGuest();
 
-        assertEquals(expected, actual);*/
+        assertEquals(expected, actual);
 
 
-    }
+    }*/
 }
