@@ -1,6 +1,5 @@
 package facades;
 
-import dtos.ShowDTO;
 import entities.Festival;
 import entities.Guest;
 import entities.Shows;
