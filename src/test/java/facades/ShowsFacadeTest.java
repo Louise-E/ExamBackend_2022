@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShowsFacadeTest {
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static ShowFacade showFacade;
 
     private Shows shows1, shows2;
@@ -77,5 +77,5 @@ class ShowsFacadeTest {
 
         assertEquals(expected, actual);
 
-    }
+    }*/
 }
