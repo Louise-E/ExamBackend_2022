@@ -25,7 +25,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShowsResourceTest {
-    private static final int SERVER_PORT = 7777;
+    /*private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost/api";
 
     static final URI BASE_URI = UriBuilder.fromUri(SERVER_URL).port(SERVER_PORT).build();
@@ -94,7 +94,7 @@ class ShowsResourceTest {
     }
 
     //virker ikke
-    /*@Test
+    @Test
     public void getAllShows() {
         List<ShowDTO> showDTOList;
 
