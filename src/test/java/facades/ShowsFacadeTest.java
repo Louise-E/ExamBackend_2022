@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShowsFacadeTest {
-    /*private static EntityManagerFactory emf;
+    private static EntityManagerFactory emf;
     private static ShowFacade showFacade;
 
     private Shows shows1, shows2;
@@ -71,11 +71,11 @@ class ShowsFacadeTest {
 
     //virker
     @Test
-    public void getAllShows() {
+    public void getAllShowsTest() {
         int expected = 2;
         int actual = showFacade.getAllShows().size();
 
         assertEquals(expected, actual);
 
-    }*/
+    }
 }
