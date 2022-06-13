@@ -16,7 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FestivalFacadeTest {
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static FestivalFacade festivalFacade;
 
     private Festival festival;
@@ -93,5 +93,5 @@ class FestivalFacadeTest {
 
         assertEquals(expected, actual);
 
-    }
+    }*/
 }
