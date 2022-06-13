@@ -6,3 +6,7 @@ x-auth-token:
 "username":"user",
 "password":"test123"
 }
+
+###
+
+GET http://localhost:8080/devops_starter_war_exploded/api/show/all

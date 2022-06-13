@@ -8,8 +8,6 @@ import utils.EMF_Creator;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class UserFacadeTest {
     private static EntityManagerFactory emf;
     private static UserFacade userFacade;
@@ -54,19 +52,5 @@ class UserFacadeTest {
 
     @AfterEach
     public void tearDown() {
-    }
-
-    @Disabled
-    @Test
-    public void getUserFacade() {
-    }
-    @Disabled
-    @Test
-    public void getVeryfiedUser() {
-    }
-    @Disabled
-    @Test
-    public void createTest() {
-
     }
 }

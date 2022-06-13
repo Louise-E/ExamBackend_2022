@@ -87,7 +87,6 @@ class ShowsFacadeTest {
         String actual = showFacade.getAllShows().size();
 
         */
-
         int expected = 2;
         int actual = showFacade.getAllShows().size();
 
