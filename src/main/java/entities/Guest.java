@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "guest")
+@Table(name = "Guest")
 @NamedQuery(name = "Guest.deleteAllRows", query = "DELETE FROM Guest")
 public class Guest implements Serializable {
     @Id
@@ -29,19 +29,27 @@ public class Guest implements Serializable {
     private Festival festival = new Festival();
 
     @ManyToMany(mappedBy = "guestList")
-    private List<Show> showList = new ArrayList<>();
+    private List<Shows> showsList = new ArrayList<>();
 
     public Guest() {
     }
 
-    public Guest(Integer guestId, String guestName, String phone, String email, String status, Festival festival, List<Show> showList) {
+    public Guest(Integer guestId, String guestName, String phone, String email, String status, Festival festival, List<Shows> showsList) {
         this.guestId = guestId;
         this.guestName = guestName;
         this.phone = phone;
         this.email = email;
         this.status = status;
         this.festival = festival;
-        this.showList = showList;
+        this.showsList = showsList;
+    }
+
+    public Guest(String guestName, String phone, String email, String status, Festival festival) {
+        this.guestName = guestName;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.festival = festival;
     }
 
     public Integer getGuestId() {
@@ -92,12 +100,12 @@ public class Guest implements Serializable {
         this.festival = festival;
     }
 
-    public List<Show> getShowList() {
-        return showList;
+    public List<Shows> getShowList() {
+        return showsList;
     }
 
-    public void setShowList(List<Show> showList) {
-        this.showList = showList;
+    public void setShowList(List<Shows> showsList) {
+        this.showsList = showsList;
     }
 
     @Override
@@ -109,7 +117,7 @@ public class Guest implements Serializable {
                 ", email='" + email + '\'' +
                 ", status='" + status + '\'' +
                 ", festival=" + festival +
-                ", showList=" + showList +
+                ", showList=" + showsList +
                 '}';
     }
 }

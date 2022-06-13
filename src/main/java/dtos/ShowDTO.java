@@ -1,7 +1,7 @@
 package dtos;
 
 import entities.Guest;
-import entities.Show;
+import entities.Shows;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +27,17 @@ public class ShowDTO {
         this.guestList = guestList;
     }
 
-    public ShowDTO(Show show) {
-        this.showId = show.getShowId();
-        this.showName = show.getShowName();
-        this.duration = show.getDuration();
-        this.location = show.getLocation();
-        this.startDate = show.getStartDate();
-        this.startTime = show.getStartTime();
-        this.guestList = show.getGuestList();
+    public ShowDTO(Shows shows) {
+        this.showId = shows.getShowId();
+        this.showName = shows.getShowName();
+        this.duration = shows.getDuration();
+        this.location = shows.getLocation();
+        this.startDate = shows.getStartDate();
+        this.startTime = shows.getStartTime();
+        this.guestList = shows.getGuestList();
     }
 
-    public static List<ShowDTO> getDtos(List<Show> shows){
+    public static List<ShowDTO> getDtos(List<Shows> shows){
         List<ShowDTO> showDTOS = new ArrayList<>();
         if (shows != null){
             shows.forEach(s -> showDTOS.add(new ShowDTO(s)));

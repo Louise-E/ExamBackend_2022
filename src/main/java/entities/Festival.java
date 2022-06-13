@@ -4,11 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "festival")
+@Table(name = "Festival")
 @NamedQuery(name = "Festival.deleteAllRows", query = "DELETE FROM Festival")
 public class Festival implements Serializable {
     @Id
@@ -39,6 +38,13 @@ public class Festival implements Serializable {
         this.startDate = startDate;
         this.duration = duration;
         this.guests = guests;
+    }
+
+    public Festival(String festivalName, String city, String startDate, String duration) {
+        this.festivalName = festivalName;
+        this.city = city;
+        this.startDate = startDate;
+        this.duration = duration;
     }
 
     public Integer getFestivalId() {

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "show")
-@NamedQuery(name = "Show.deleteAllRows", query = "DELETE FROM Show")
-public class Show implements Serializable {
+@Table(name = "Shows")
+@NamedQuery(name = "Shows.deleteAllRows", query = "DELETE FROM Shows")
+public class Shows implements Serializable {
     @Id
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +30,20 @@ public class Show implements Serializable {
     @ManyToMany
     private List<Guest> guestList = new ArrayList<>();
 
-    public Show() {
+    public Shows() {
     }
 
-    public Show(Integer showId, String showName, String duration, String location, String startDate, String startTime, List<Guest> guestList) {
+    public Shows(Integer showId, String showName, String duration, String location, String startDate, String startTime, List<Guest> guestList) {
         this.showId = showId;
+        this.showName = showName;
+        this.duration = duration;
+        this.location = location;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.guestList = guestList;
+    }
+
+    public Shows(String showName, String duration, String location, String startDate, String startTime, List<Guest> guestList) {
         this.showName = showName;
         this.duration = duration;
         this.location = location;

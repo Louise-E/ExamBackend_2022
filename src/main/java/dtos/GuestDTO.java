@@ -2,7 +2,7 @@ package dtos;
 
 import entities.Festival;
 import entities.Guest;
-import entities.Show;
+import entities.Shows;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,19 +13,19 @@ public class GuestDTO {
     private String email;
     private String status;
     private Festival festival;
-    private List<Show> showList;
+    private List<Shows> showsList;
 
     public GuestDTO() {
     }
 
-    public GuestDTO(Integer guestId, String guestName, String phone, String email, String status, Festival festival, List<Show> showList) {
+    public GuestDTO(Integer guestId, String guestName, String phone, String email, String status, Festival festival, List<Shows> showsList) {
         this.guestId = guestId;
         this.guestName = guestName;
         this.phone = phone;
         this.email = email;
         this.status = status;
         this.festival = festival;
-        this.showList = showList;
+        this.showsList = showsList;
     }
 
     public GuestDTO(Guest guest) {
@@ -35,7 +35,7 @@ public class GuestDTO {
         this.email = guest.getEmail();
         this.status = guest.getStatus();
         this.festival = guest.getFestival();
-        this.showList = guest.getShowList();
+        this.showsList = guest.getShowList();
     }
 
     public static List<GuestDTO> getDtos(List<Guest> guests) {
@@ -94,12 +94,12 @@ public class GuestDTO {
         this.festival = festival;
     }
 
-    public List<Show> getShowList() {
-        return showList;
+    public List<Shows> getShowList() {
+        return showsList;
     }
 
-    public void setShowList(List<Show> showList) {
-        this.showList = showList;
+    public void setShowList(List<Shows> showsList) {
+        this.showsList = showsList;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class GuestDTO {
                 ", email='" + email + '\'' +
                 ", status='" + status + '\'' +
                 ", festival=" + festival +
-                ", showList=" + showList +
+                ", showList=" + showsList +
                 '}';
     }
 }
